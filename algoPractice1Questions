@@ -1,0 +1,143 @@
+#1
+Sum of Multiples
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+
+
+
+#2
+Staircase detail
+
+This is a staircase of size :
+
+   #
+  ##
+ ###
+####
+Its base and height are both equal to 3. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a program that prints a staircase of size n.
+
+Function Description
+The function should accept a number as input. This number is the height and width of the staircase.
+
+Print a staircase as described above.
+
+Function Constraints
+The number specified for height and width should be greater than 0 and less than 100.
+
+Output Format
+Print a staircase of size using # symbols and spaces.
+
+
+
+#3
+City Planner
+You are in charge of the city planning for your town. When new companies come to town, they often want to make a statement, but the city has a height requirement on any new building. Your job is to count how many buildings currently are the highest.
+
+Example:
+
+const buildings = [ 1250, 800, 600, 1250, 750 ]
+The current maximum height buildings are 1250 meters high. There are 2 of them, so return 2 from the function.
+
+Function Description
+The function should accept an array of numbers as input.
+
+Returns
+The number of buildings that are tallest.
+
+Sample Input
+[ 1150, 3023, 2020, 3023, 3023 ]
+Sample Output
+3
+
+
+
+#4
+The Professor
+HackerLand University has the following grading policy:
+
+Every student receives a grade in the inclusive range from 0 to 100.
+
+Any grade less than 40 is a failing grade.
+
+Latitia is a professor at the university and likes to round each student's according to these rules:
+
+If the difference between the grade and the next multiple of 5 is less than 3, round the grade up to the next multiple of 5.
+If the value of the grade is less than 38, no rounding occurs as the result will still be a failing grade.
+
+Given the initial value of the grade for each of Sam's n students, write code to automate the rounding process.
+
+Constraints
+Each grade should be 1 ⩽ 𝓷 ⩽ 100
+Number of student grades should be 1 ⩽ 𝓷 ⩽ 30
+
+
+
+
+#5
+Rocket Fuel
+The Earth probe, Surveyor, has become stranded at the edge of the Solar System after encountering some space dust. To accurately calculate its position in space, safely align its nuclear drive, and continue on its journey, you need to determine its fuel requirements.
+
+Fuel required to power a given module is based on its mass. Specifically, to find the fuel required for a module, take its mass, divide by three, round down, and subtract 2.
+
+For example:
+
+For a mass of 12, divide by 3 and round down to get 4, then subtract 2 to get 2.
+
+For a mass of 14, dividing by 3 and rounding down still yields 4, so the fuel required is also 2.
+
+For a mass of 1969, the fuel required is 654.
+
+For a mass of 100756, the fuel required is 33583.
+
+The Fuel Management team for the project needs to know the total fuel requirement. To find it, individually calculate the fuel needed for the mass of each module, then add together all the fuel values.
+
+What is the sum of the fuel requirements for all of the modules on your spacecraft?
+
+
+
+#6
+Palindrome Numbers
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+
+
+#7
+Palindrome Words
+A palindromic word reads the same both ways. The longest English palindrome is "tattarrattat", which means "the sound of a knock on the door".
+
+Write a function that takes a word as input, and returns a boolean indicating if the word is a palindrome.
+
+
+
+#8
+An arcade game player wants to climb to the top of the leaderboard and track their ranking. The game uses Dense Ranking, so its leaderboard works like this:
+
+The player with the highest score is ranked number 1 on the leaderboard.
+
+Players who have equal scores receive the same ranking number, and the next player(s) receive the immediately following ranking number.
+
+Return the current player's ranking
+
+
+
+#9
+Starting with a frequency of zero, what is the resulting frequency after all of the changes in frequency have been applied? (each change in frequency is added to current frequency)
+
+
+
+#10
+The frequency changes in the previous question happen in a repeating pattern. If they keep repeating, find the first total frequency reached twice 
+
+
+
+#11
+Count the number of boxIds that have an ID containing exactly two of any letter and then separately count those with exactly three of any letter. Return those two amounts multiplied together
+
+
+#12
+Find the two correct box Ids (where only one letter is different in same index place). What letters are common between the two correct box IDs?
