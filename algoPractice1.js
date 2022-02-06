@@ -409,6 +409,7 @@ const boxIds = ["ubkfmdjxyzlbgkrotcepvswaqx", "uikfmdkuyzlbgerotcepvswaqh", "uik
 
 //! 12
 
+//!My attempt to solve - produced the correct answer, but could be faster
 const compareTwoStrings = (string1, string2) => {
     let intersection = ''
 
@@ -423,11 +424,11 @@ const compareTwoStrings = (string1, string2) => {
     }
 }
 
-console.time('mine')
+// console.time('old')
 let result = ''
 
-for (let i = 0; i < boxIds.length; i ++) {
-    for (let j = i + 1; j < boxIds.length; j ++) {
+for (let i = 0; i < boxIds.length; i++) {
+    for (let j = i + 1; j < boxIds.length; j++) {
         const intersection = compareTwoStrings(boxIds[i], boxIds[j])
         if (intersection) {
             result = intersection
@@ -435,13 +436,11 @@ for (let i = 0; i < boxIds.length; i ++) {
     }
 }
 
-console.log(result)
-console.timeEnd("mine")
+// console.log(result)
+// console.timeEnd("old")
 
 
-
-
-//! The below is code obtained from an NSS instructor, which I commented out
+//!Code from an instructor, which I added comments to
 
 // generator function, which returns Generator object
 // each time Generator object .next property is accessed, yields next value
@@ -514,3 +513,44 @@ do {
 //ends timer
 console.timeEnd("Steve")
 
+
+//! My attempt to make the above code run faster - runs approximately 90% faster on given sample
+
+const comparator2 = function* () {
+    for (let i = 0; i < boxIds.length; i++) {
+        const first = boxIds[i].split("")
+        for (let j = i + 1; j < boxIds.length; j++) {
+            const second = boxIds[j].split("")
+            yield { first, second }
+        }
+    }
+}()
+
+let differentCharacters2 = 0
+let differentIndex2 = null
+
+console.time('new')
+
+do {
+    const ids = comparator2.next().value
+
+    differentCharacters2 = 0;
+
+    for (let i = 0; i < ids.first.length; i++) {
+        if (ids.first[i] !== ids.second[i]) {
+            differentCharacters2++
+            differentIndex2 = i
+            if (differentCharacters2 > 1) {
+                break
+            }
+        }
+    }
+
+    if (differentCharacters2 === 1) {
+        ids.first.splice(differentIndex2, 1)
+        console.log([...ids.first].join(""))
+    }
+
+} while (differentCharacters2 !== 1)
+
+console.timeEnd('new')
